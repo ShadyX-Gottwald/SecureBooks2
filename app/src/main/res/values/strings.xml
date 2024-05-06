@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SecureBooks2</string>
+    <string name="type_your_email">Enter your Email</string>
+    <string name="type_your_password">Enter your password</string>
+    <string name="already_signed_up">Already Signed up</string>
+    <string name="sign_up">Register</string>
+    <string name="confirm_your_password">Confirm your Password</string>
+</resources>
