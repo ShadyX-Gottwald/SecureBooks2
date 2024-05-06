@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "896465475771",
+    "project_id": "books2-a1b8e",
+    "storage_bucket": "books2-a1b8e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896465475771:android:fd590495d51da8dea4719e",
+        "android_client_info": {
+          "package_name": "com.example.securebooks2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGLjEIqXWqCTAm9bfSKRQlStVU7zMhpBY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

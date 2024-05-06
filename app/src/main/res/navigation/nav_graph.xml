@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/profileFragment1">
+    <fragment
+        android:id="@+id/profileFragment1"
+        android:name="com.example.securebooks2.Activities.Fragments.Profile.ProfileFragment1"
+        android:label="fragment_profile_fragment1"
+        tools:layout="@layout/fragment_profile_fragment1" >
+        <action
+            android:id="@+id/action_profileFragment1_to_myCollectionFragment"
+            app:destination="@id/myCollectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myCollectionFragment"
+        android:name="com.example.securebooks2.Activities.Fragments.MyCollection.MyCollectionFragment"
+        android:label="fragment_my_collection"
+        tools:layout="@layout/fragment_my_collection" />
+</navigation>
