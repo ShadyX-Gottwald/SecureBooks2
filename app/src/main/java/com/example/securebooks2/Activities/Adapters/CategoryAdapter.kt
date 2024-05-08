@@ -1,6 +1,8 @@
 package com.example.securebooks2.Activities.Adapters
 
 import android.view.LayoutInflater
+import android.view.View
+import android.view.View.OnClickListener
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.securebooks2.Activities.Models.Category
@@ -31,8 +33,14 @@ class CategoryAdapter(
     }
 
     override fun onBindViewHolder(holder: CategoryAdapterViewHolder, position: Int) {
+        //Set Bind to UI Respective UI Elements
         val categoryItem = list!![position]
         bind.materialTextView.text = categoryItem.categoryTitle
+        bind.bookImg.setOnClickListener {
+
+        }
     }
+
+
 
 }
