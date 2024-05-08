@@ -47,23 +47,32 @@
 
     </ImageView>
 
-<!--ENTER TITLE SECTION-->
+    <!--ENTER TITLE SECTION-->
+
+    <!--Seek Bar Section-->
+
+    <!--CREATE BTN Section-->
+
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/etCategoryTitle"
         android:layout_width="282dp"
         android:layout_height="60dp"
         android:outlineAmbientShadowColor="#DAA520"
         android:layout_marginBottom="308dp"
+
         android:elevation="@dimen/cardview_compat_inset_shadow"
         android:hint="Category Title"
         android:inputType="textCapWords"
+
         android:shadowRadius="12"
         android:textColorHint="@color/white"
         android:text=""
         android:textColor="@color/white"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.519"
+
+        app:layout_constraintHorizontal_bias="0.534"
         app:layout_constraintStart_toStartOf="parent">
 
     </com.google.android.material.textfield.TextInputEditText>
@@ -72,20 +81,35 @@
 
     <!--CREATE BTN Section-->
 
+    <!--  <SeekBar
+        android:id="@+id/sbTarget"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="244dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.239"
+        app:layout_constraintStart_toEndOf="@+id/sbTitle">
+
+    </SeekBar>  -->
+
     <TextView
         android:id="@+id/sbTitle"
         android:layout_width="80dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="244dp"
+        android:layout_marginBottom="184dp"
+
         android:text="Target"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.202"
+        app:layout_constraintHorizontal_bias="0.093"
+
         app:layout_constraintStart_toStartOf="parent">
 
     </TextView>
+
 
     <TextView
         android:id="@+id/progress"
@@ -94,8 +118,10 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="232dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="224dp"
+
+
         android:padding="10dp"
         android:text="0"
         android:textAlignment="center"
@@ -107,42 +133,51 @@
 
     </TextView>
 
-    <SeekBar
-        android:id="@+id/sbTarget"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="244dp"
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/etTarget"
+        android:layout_width="282dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="236dp"
+        android:elevation="@dimen/cardview_compat_inset_shadow"
+        android:hint="Category Target"
+        android:inputType="textCapWords"
+        android:outlineAmbientShadowColor="#DAA520"
+        android:shadowRadius="12"
+        android:text=""
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.239"
-        app:layout_constraintStart_toEndOf="@+id/sbTitle">
-
-    </SeekBar>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/createCollectionBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="96dp"
-        android:backgroundTint="#DAA520"
-        android:gravity="center_horizontal"
-        android:inputType="text"
-        android:text="CREATE"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.534"
         app:layout_constraintStart_toStartOf="parent">
 
-    </com.google.android.material.button.MaterialButton>
+    </com.google.android.material.textfield.TextInputEditText>
 
-   <!-- <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="39dp" /> -->
+    <com.google.android.material.button.MaterialButton
+android:id="@+id/createCollectionBtn"
+android:layout_width="wrap_content"
+android:layout_height="50dp"
+android:layout_gravity="center_horizontal"
+android:layout_marginBottom="96dp"
+android:backgroundTint="#DAA520"
+android:gravity="center_horizontal"
+android:inputType="text"
+android:text="CREATE"
+android:textColor="@color/black"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.498"
+app:layout_constraintStart_toStartOf="parent">
+
+</com.google.android.material.button.MaterialButton>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- <com.google.android.material.appbar.MaterialToolbar
+         android:id="@+id/toolbar"
+         android:layout_width="match_parent"
+         android:layout_height="?attr/actionBarSize"
+         tools:layout_editor_absoluteX="0dp"
+         tools:layout_editor_absoluteY="39dp" /> -->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
