@@ -33,20 +33,6 @@
         app:layout_constraintStart_toStartOf="parent">
     </TextView>
 
-    <ImageView
-        android:id="@+id/bookImg"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
-        android:layout_marginBottom="396dp"
-        android:clipToOutline="true"
-        android:background="@drawable/open_book"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.46"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </ImageView>
-
     <!--ENTER TITLE SECTION-->
 
     <!--Seek Bar Section-->
@@ -170,6 +156,28 @@ app:layout_constraintHorizontal_bias="0.498"
 app:layout_constraintStart_toStartOf="parent">
 
 </com.google.android.material.button.MaterialButton>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="328dp"
+        android:layout_height="153dp"
+        android:layout_marginBottom="400dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.277"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/collectionImg"
+            android:layout_width="212dp"
+            android:layout_height="119dp"
+            android:layout_marginBottom="36dp"
+            android:contentDescription="Add Image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/baseline_image_24" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <!-- <com.google.android.material.appbar.MaterialToolbar

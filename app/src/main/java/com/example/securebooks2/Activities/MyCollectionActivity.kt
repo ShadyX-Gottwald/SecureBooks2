@@ -41,7 +41,20 @@ class MyCollectionActivity : AppCompatActivity() {
         _adapter = CategoryAdapter(categories,auth,firestore)
         bind.recView.adapter = _adapter
         bind.recView.setHasFixedSize(false)
+        _adapter.setOnClickListener(object : CategoryAdapter.OnClickListener{
+            override fun onClick(position: Int, model: Category) {
+                val intent = Intent(this@MyCollectionActivity, DummyActivity::class.java)
+                // Passing the data to the
+                // EmployeeDetails Activity
+                intent.putExtra(CATEGORY, categories?.get(position)?.categoryTitle)
 
+                startActivity(intent)
+            }
+        })
+    }
+
+    companion object{
+        const val CATEGORY = "category"
     }
 
     private fun setUpGetCategoryObservers() {

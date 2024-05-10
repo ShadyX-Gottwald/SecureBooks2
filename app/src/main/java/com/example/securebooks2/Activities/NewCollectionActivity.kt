@@ -1,5 +1,7 @@
 package com.example.securebooks2.Activities
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,6 +18,8 @@ import com.example.securebooks2.R
 import com.example.securebooks2.databinding.ActivityNewCollectionBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import java.util.UUID
 
 class NewCollectionActivity : AppCompatActivity() {
@@ -23,6 +27,10 @@ class NewCollectionActivity : AppCompatActivity() {
     private val auth: FirebaseAuth  = FirebaseAuth.getInstance()
     private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
     private val viewmodel by lazy{NewCollectionViewModel(auth,firestore)}
+    private val PICK_IMAGE_REQUEST = 71
+    private lateinit var filePath: Uri
+    private var storageReference: StorageReference? = FirebaseStorage.getInstance().reference
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +38,7 @@ class NewCollectionActivity : AppCompatActivity() {
         setContentView(bind.root)
         setUpObservers()
         setUpClickEvents()
+        setUpImageSelectListeners()
       //  bind.sbTarget.min = 0
      //   bind.sbTarget.min = 10
         setUpSeekbarListeners()
@@ -44,16 +53,23 @@ class NewCollectionActivity : AppCompatActivity() {
             val categoryTargetNum = bind.etTarget.text.toString().toInt()
 
             if(categoryTargetNum in 1..10){
-                //Capture Variables to Category Obj
-                val categoryObj = Category().apply {
-                    this.categoryId = categoryId
-                    this.userId = userId
-                    this.categoryTargetNum = categoryTargetNum
-                    this.categoryTitle = categoryTitle
+                when(filePath) {
+                    null -> {
+                        Toast.makeText(this, "Please choose Image to Upload" , Toast.LENGTH_SHORT).show()
+                    }
+                    else -> {
+                        //Capture Variables to Category Obj
+                        val categoryObj = Category().apply {
+                            this.categoryId = categoryId
+                            this.userId = userId
+                            this.categoryTargetNum = categoryTargetNum
+                            this.categoryTitle = categoryTitle
 
+                        }
+
+                        viewmodel.createCategory(categoryObj, filePath)
+                    }
                 }
-
-                viewmodel.createCategory(categoryObj)
 
 
             }else {
@@ -63,6 +79,14 @@ class NewCollectionActivity : AppCompatActivity() {
 
 
         }
+
+    }
+
+    private fun setUpImageSelectListeners() {
+        bind.collectionImg.setOnClickListener{
+            selectImage()
+        }
+
 
     }
 
@@ -100,4 +124,26 @@ class NewCollectionActivity : AppCompatActivity() {
 //        })
 
     }
+
+    /***Code to select image , Upload****/
+
+    private fun selectImage() {
+        val intent = Intent()
+        intent.type = "image/*"
+        intent.action = Intent.ACTION_GET_CONTENT
+        startActivityForResult(intent,
+            100)
+
+    }
+    @Deprecated("Deprecated in Java")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 100 && data != null && data.data != null ) {
+
+            //Get Image , Set to View.
+            filePath = data.data!!
+            bind.collectionImg.setImageURI(filePath)
+        }
+    }
+
 }

@@ -8,4 +8,5 @@ interface LoginRegisterService {
 
     fun signUpToFirebase(user: RegisterModel) : Boolean?
     fun loginToFirebase(user: LoginModel): FirebaseUser?
+
 }

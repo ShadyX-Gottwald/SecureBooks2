@@ -8,13 +8,16 @@ import com.example.securebooks2.Activities.Models.Category
 import com.example.securebooks2.Activities.Utilities.Resource
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 
 private val TAG = "MyCollection VM TAG"
 
 class MyCollectionViewModel(
     private val  _auth: FirebaseAuth = FirebaseAuth.getInstance(),
     private val _firestore: FirebaseFirestore = FirebaseFirestore.getInstance(),
-    private var _service: CategoryServiceImpl = CategoryServiceImpl(_auth,_firestore)
+    private val _storage: StorageReference = FirebaseStorage.getInstance().reference,
+    private var _service: CategoryServiceImpl = CategoryServiceImpl(_auth,_firestore,_storage)
 
 ): ViewModel() {
 
