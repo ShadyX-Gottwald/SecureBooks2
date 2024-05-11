@@ -12,4 +12,6 @@ interface CategoryServices {
     fun getUserCategories(): Task<QuerySnapshot>
 
     fun uploadCategoryImage(uri: Uri?): Task<Uri>
+
+    fun getCategoryUrlForBook(category: String): Task<QuerySnapshot>
 }

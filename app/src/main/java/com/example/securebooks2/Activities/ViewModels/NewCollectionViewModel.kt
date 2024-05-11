@@ -1,5 +1,6 @@
 package com.example.securebooks2.Activities.ViewModels
 
+import android.annotation.SuppressLint
 import android.net.Uri
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -27,15 +28,18 @@ class NewCollectionViewModel(
     }
 
 
-    fun createCategory(category: Category,uri: Uri) {
+    @SuppressLint("SuspiciousIndentation")
+    fun createCategory(category: Category, uri: Uri) {
+        result.postValue(Resource.Loading(false))
 
         try{
            val  res = _service.uploadCategoryImage(uri).addOnCompleteListener{task->
                if(task.isSuccessful) {
                    val imageUrl = task.result
-                 val created =   _service.createCategory(category , imageUrl.toString())
-                   result.postValue(Resource.Success(true , "Failure Saving ,$category"))
 
+                 val created =  _service.createCategory(category , imageUrl.toString())
+                   result.postValue(Resource.Success(true
+                       , "New Category ,${category.categoryTitle} Saved"))
 
                }
 

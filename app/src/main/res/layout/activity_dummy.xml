@@ -10,16 +10,14 @@
 
 
     <TextView
-        android:id= "@+id/collectorTextView"
+        android:id="@+id/nameTv"
         android:layout_width="44dp"
         android:layout_height="22dp"
         android:textColorHint="#DAA520"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.904"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.785" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewHeaderProfile"
@@ -39,31 +37,6 @@
         app:layout_constraintVertical_bias="0.023" />
 
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageViewProfile"
-        android:layout_width="219dp"
-        android:layout_height="214dp"
-        android:layout_marginBottom="356dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/baseline_account_circle_24" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
-        app:layout_constraintBottom_toBottomOf="@+id/imageViewProfile"
-        app:layout_constraintEnd_toEndOf="@+id/imageViewProfile"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/baseline_camera_alt_24"
-        android:contentDescription="TODO" />
-
-
     <Button
         android:id="@+id/buttonVC"
         android:layout_width="146dp"
@@ -78,22 +51,25 @@
         app:layout_constraintHorizontal_bias="0.939"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/buttonCC"
-        android:layout_width="145dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="392dp"
-        android:backgroundTint="#DAA520"
-        android:text=" CREATE CATEGORY "
-        android:textColor="@color/black"
-        android:textSize="12sp"
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="104dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="408dp"
+        android:background="@color/white"
+        android:calendarTextColor="@color/white"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        android:onClick="clickDataPicker"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </DatePicker>
 
     <Button
-        android:id="@+id/buttonLogout"
+        android:id="@+id/btnUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -106,10 +82,10 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textViewUsernameDisplay"
+        android:id="@+id/helloTv"
         android:layout_width="248dp"
         android:layout_height="39dp"
-        android:layout_marginBottom="312dp"
+        android:layout_marginBottom="404dp"
         android:textAlignment="center"
         android:textColor="#DAA520"
         android:textColorHighlight="@color/white"
@@ -119,123 +95,24 @@
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textViewAchievmentSystem"
-        android:layout_width="342dp"
-        android:layout_height="37dp"
-        android:layout_marginBottom="248dp"
-        android:hint=" ACHIEVEMENT SYSTEM"
+        android:id="@+id/textViewUsernameDisplay2"
+        android:layout_width="248dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="556dp"
         android:textAlignment="center"
-        android:textColorHint="@color/white"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColor="#DAA520"
+        android:textColorHighlight="@color/white"
 
-    <TextView
-        android:id="@+id/textViewStarter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
-        android:hint="STARTER"
-        android:textColorHint="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ProgressBar
-        android:id="@+id/progressBarStarter"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="137dp"
-        android:layout_height="25dp"
-        android:layout_marginBottom="200dp"
-        android:background="@color/white"
-        android:progressBackgroundTint="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.649"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewCollector"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="152dp"
-        android:hint="COLLECTOR"
-        android:textColorHint="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.163"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ProgressBar
-        android:id="@+id/progressBarCollector"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="137dp"
-        android:layout_height="25dp"
-        android:layout_marginBottom="152dp"
-        android:background="@color/white"
-        android:backgroundTint="@color/white"
-        android:progressBackgroundTint="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.649"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewPackrat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="108dp"
-        android:hint="PACKRAT"
-        android:textColorHint="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.151"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ProgressBar
-        android:id="@+id/progressBarPackrat"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="137dp"
-        android:layout_height="25dp"
-        android:layout_marginBottom="108dp"
-        android:background="@color/white"
-        android:backgroundTint="@color/white"
-        android:progressBackgroundTint="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.649"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/StartertextView"
-        android:layout_width="44dp"
-        android:layout_height="22dp"
-        android:layout_marginBottom="200dp"
         android:textColorHint="#DAA520"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/PackrattextView"
-        android:layout_width="44dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="332dp"
-        android:layout_marginBottom="108dp"
-        android:textColorHint="#DAA520"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.115"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

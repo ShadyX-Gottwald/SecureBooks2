@@ -28,7 +28,7 @@ class LoginActivity : AppCompatActivity() {
     private fun setClickEvents() {
         binding.loginBtn.setOnClickListener {
             val email = binding.etEmail.text.toString()
-            val pass = binding.password.text.toString()
+            val pass = binding.etPassword.text.toString()
 
             //Login Process Result
             val user = LoginModel(email, pass)
@@ -65,7 +65,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun onFailureUiTrigger() {
-        binding.password.text = null
+        binding.etPassword.text = null
     }
     private fun onSuccessEvent() {
         val nextScreen = Intent(this@LoginActivity , ProfileActivity::class.java)
@@ -75,7 +75,7 @@ class LoginActivity : AppCompatActivity() {
     }
     private fun loginClicked() {
         val email =  binding.etEmail.text.toString()
-        val password = binding.password.text.toString()
+        val password = binding.etPassword.text.toString()
         if(email.isNotEmpty() && password.isNotEmpty() ){
             //Show Progress bar When Logging In
             binding.progressCircular.visibility = View.VISIBLE

@@ -44,6 +44,8 @@ android {
 }
 
 dependencies {
+    //Glide Lib Dependency
+    implementation ("com.github.bumptech.glide:glide:4.13.0")
 
     implementation("androidx.fragment:fragment-ktx:1.6.2")
     implementation("com.google.firebase:firebase-auth:23.0.0")

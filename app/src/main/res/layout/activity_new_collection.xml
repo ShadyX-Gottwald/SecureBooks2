@@ -19,7 +19,7 @@
 
     <!--TITLE Header Section-->
     <TextView
-        android:id="@+id/textViewlog"
+        android:id="@+id/tvCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="588dp"

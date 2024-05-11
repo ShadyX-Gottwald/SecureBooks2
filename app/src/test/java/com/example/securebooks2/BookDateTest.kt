@@ -1,38 +1,38 @@
 package com.example.securebooks2
 
+import com.example.securebooks2.Activities.Utilities.DateUtils
 import org.junit.Test
 import java.util.Date
 import org.junit.Assert
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.time.format.DateTimeParseException
 
 class BookDateTest {
 
+    private val data: DateUtils
+        get() {
+          return DateUtils()
+        }
 
     @Test
-    fun `invalid date format`() {
+    fun `should match date format`() {
 
         val date = "12/3/2000"
 
-        date.split("/")
+        val split = date.split("/")
 
-        val dateparse = Date()
+//        val day = split[0]
+//        val month = split[1]
+//        val year = split[2]
+        val res =  DateUtils.validDateMatch(date)
 
-
-        val result = isDateValid(date)
-        Assert.assertTrue(result)
+        assertTrue(res)
 
     }
 
-    fun isDateValid(dateString: String): Boolean {
-        try {
-            LocalDate.parse(dateString, DateTimeFormatter.ofPattern("dd-MM-yyyy"))
-            return true
-        } catch (e: DateTimeParseException) {
-            return false
-        }
-    }
 
 
 }

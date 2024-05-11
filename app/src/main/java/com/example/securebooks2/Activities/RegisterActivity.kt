@@ -63,7 +63,7 @@ class RegisterActivity : AppCompatActivity() {
 
         binding.login.setOnClickListener{
             val email = binding.etEmail.text.toString()
-            val pass = binding.password.text.toString()
+            val pass = binding.etPassword.text.toString()
             val confirm_pass = binding.etPassConfirm.text.toString()
 
             //Register process

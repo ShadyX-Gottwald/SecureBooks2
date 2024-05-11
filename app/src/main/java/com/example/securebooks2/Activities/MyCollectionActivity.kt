@@ -41,12 +41,14 @@ class MyCollectionActivity : AppCompatActivity() {
         _adapter = CategoryAdapter(categories,auth,firestore)
         bind.recView.adapter = _adapter
         bind.recView.setHasFixedSize(false)
+
         _adapter.setOnClickListener(object : CategoryAdapter.OnClickListener{
             override fun onClick(position: Int, model: Category) {
-                val intent = Intent(this@MyCollectionActivity, DummyActivity::class.java)
-                // Passing the data to the
-                // EmployeeDetails Activity
+                val intent = Intent(this@MyCollectionActivity, AddBookActivity::class.java)
+                // Passing the data to the next activity
+
                 intent.putExtra(CATEGORY, categories?.get(position)?.categoryTitle)
+               intent.putExtra(IMAGE_URL, categories?.get(position)?.imageUrl)
 
                 startActivity(intent)
             }
@@ -55,6 +57,7 @@ class MyCollectionActivity : AppCompatActivity() {
 
     companion object{
         const val CATEGORY = "category"
+        const val IMAGE_URL = "imageUrl"
     }
 
     private fun setUpGetCategoryObservers() {
@@ -74,13 +77,9 @@ class MyCollectionActivity : AppCompatActivity() {
 
                     setDataToRecView(it.data)
 
-
                 }
                 else -> {}
             }
         })
-
-
-
     }
 }
