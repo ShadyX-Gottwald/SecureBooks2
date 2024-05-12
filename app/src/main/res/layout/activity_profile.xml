@@ -66,7 +66,7 @@
         android:layout_height="50dp"
         android:layout_marginBottom="428dp"
         android:backgroundTint="#DAA520"
-        android:text=" CREATE CATEGORY "
+        android:text="VIEW BOOKS "
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"

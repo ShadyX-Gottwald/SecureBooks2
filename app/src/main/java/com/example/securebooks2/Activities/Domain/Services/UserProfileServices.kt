@@ -11,6 +11,4 @@ interface UserProfileServices {
 
     fun createUserProfile(imageUrl: String , userId: String)
 
-
-    
 }

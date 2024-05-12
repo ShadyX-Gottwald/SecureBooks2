@@ -7,6 +7,23 @@
     android:background="@drawable/bgimg"
     tools:context=".Activities.NewCollectionActivity">
 
+    <TextView
+        android:id="@+id/textViewHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SECURE BOOKS"
+        android:textColor="#DAA520"
+        android:textColorHighlight="#DAA520"
+        android:textColorLink="#F8F2F2"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.565"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024" />
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,13 +34,14 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+
     <!--TITLE Header Section-->
     <TextView
         android:id="@+id/tvCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="588dp"
-        android:text="MY COLLECTION"
+        android:text="NEW CATEGORY"
         android:textColor="#DAA520"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -31,6 +49,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.372"
         app:layout_constraintStart_toStartOf="parent">
+
     </TextView>
 
     <!--ENTER TITLE SECTION-->

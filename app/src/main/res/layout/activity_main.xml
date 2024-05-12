@@ -66,6 +66,8 @@
         android:layout_height="60dp"
         android:layout_marginBottom="348dp"
         android:elevation="@dimen/cardview_compat_inset_shadow"
+        android:textColorHint="@color/white"
+
         android:hint="@string/type_your_password"
         android:inputType="textPassword"
         android:shadowRadius="12"
@@ -84,6 +86,8 @@
         android:layout_height="60dp"
         android:layout_marginBottom="280dp"
         android:elevation="@dimen/cardview_compat_inset_shadow"
+        android:textColorHint="@color/white"
+
         android:hint="@string/confirm_your_password"
         android:inputType="textPassword"
         android:shadowRadius="12"

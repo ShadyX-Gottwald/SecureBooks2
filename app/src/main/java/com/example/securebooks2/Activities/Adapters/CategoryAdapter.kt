@@ -3,6 +3,7 @@ package com.example.securebooks2.Activities.Adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.securebooks2.Activities.Domain.Services.OnItemClickListener
 import com.example.securebooks2.Activities.Models.Category
 import com.example.securebooks2.databinding.EachCategoryItemBinding
@@ -37,10 +38,19 @@ class CategoryAdapter(
         //Set Bind to UI Respective UI Elements
         val categoryItem = list!![position]
         bind.materialTextView.text = categoryItem.categoryTitle
+
+        //Bind image Url to Image View
+
+        holder.apply {
+            bind.apply {
+
+                Glide.with(itemView.context).load(categoryItem.imageUrl)
+                    .into(bind.bookImg)
+            }
+        }
+
         bind.bookImg.setOnClickListener {
             onItemClicked(list[position])
-
-
         }
 
         bind.bookImg.setOnClickListener {

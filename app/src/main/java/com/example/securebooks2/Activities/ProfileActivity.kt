@@ -52,8 +52,15 @@ class ProfileActivity : AppCompatActivity() {
 
     private fun setUpClickEvents() {
         binding.buttonVC.setOnClickListener{
+            //Goes To Category Page (Collection)
             val collectionActivity = Intent(this@ProfileActivity,MyCollectionActivity::class.java)
             startActivity(collectionActivity)
+        }
+
+        binding.viewAllBooksBtn.setOnClickListener {
+            val collectionActivity = Intent(this@ProfileActivity,ViewBooksActivity::class.java)
+            startActivity(collectionActivity)
+
         }
 
         binding.imageView.setOnClickListener {
@@ -140,7 +147,6 @@ class ProfileActivity : AppCompatActivity() {
 
         Glide.with(this).load(user.data?.imageUrl)
             .into(binding.imageView)
-
 
     }
 

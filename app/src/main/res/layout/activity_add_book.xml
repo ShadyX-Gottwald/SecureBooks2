@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bgimg"
     android:layout_margin="12dp"
 
     tools:context=".Activities.AddBookActivity">
@@ -18,7 +19,9 @@
         android:hint="Book Title"
         android:inputType="text"
         android:shadowRadius="12"
+        android:textColor="@color/white"
         android:text=""
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"
@@ -49,14 +52,14 @@
         android:id="@+id/tvCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="492dp"
+        android:layout_marginBottom="484dp"
         android:text="LOGIN"
         android:textColor="#DAA520"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintHorizontal_bias="0.186"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputEditText
@@ -67,13 +70,15 @@
         android:hint="Book Description"
         android:inputType="text"
         android:shadowRadius="12"
+        android:textColor="@color/white"
         android:text=""
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.549"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.48">
+        app:layout_constraintVertical_bias="0.505">
 
     </com.google.android.material.textfield.TextInputEditText>
 
@@ -81,11 +86,13 @@
         android:id="@+id/et_date"
         android:layout_width="282dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="276dp"
+        android:layout_marginBottom="240dp"
         android:elevation="@dimen/cardview_compat_inset_shadow"
         android:hint="Enter Date"
         android:inputType="text"
         android:shadowRadius="12"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

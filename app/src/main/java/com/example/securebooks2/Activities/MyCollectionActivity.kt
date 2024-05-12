@@ -4,7 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.core.view.get
 import androidx.lifecycle.Observer
+import com.bumptech.glide.Glide
 import com.example.securebooks2.Activities.Adapters.CategoryAdapter
 import com.example.securebooks2.Activities.Models.Category
 import com.example.securebooks2.Activities.Utilities.Resource
@@ -42,6 +44,7 @@ class MyCollectionActivity : AppCompatActivity() {
         bind.recView.adapter = _adapter
         bind.recView.setHasFixedSize(false)
 
+
         _adapter.setOnClickListener(object : CategoryAdapter.OnClickListener{
             override fun onClick(position: Int, model: Category) {
                 val intent = Intent(this@MyCollectionActivity, AddBookActivity::class.java)
@@ -74,6 +77,8 @@ class MyCollectionActivity : AppCompatActivity() {
                 is Resource.Success -> {
                     Toast.makeText(this,"Success Getting Data"
                         , Toast.LENGTH_SHORT).show()
+
+
 
                     setDataToRecView(it.data)
 
