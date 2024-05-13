@@ -5,7 +5,7 @@ import kotlinx.parcelize.Parcelize
 import kotlinx.serialization.Serializable
 import java.util.UUID
 
-
+//(Land of coding ,2024)
 @Parcelize
 data class Category(
     var categoryId: String,
@@ -31,5 +31,5 @@ fun Category.toMap(): HashMap<String,Any> {
         "imageUrl" to imageUrl
 
     )
-    return categoryMap
+    return categoryMap // (codingSTUFF ,2024)
 }

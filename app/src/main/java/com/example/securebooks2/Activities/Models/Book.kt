@@ -5,8 +5,10 @@ import kotlinx.parcelize.Parcelize
 import java.util.Date
 
 
+
 @Parcelize
 data class Book(
+    //Land of coding(2024)
     var bookTitle: String,
     var category: String,
     var userId: String,
@@ -26,6 +28,7 @@ data class Book(
 
 
 }
+//Land of coding(2024)
 fun Book.toMap(): HashMap<String,Any> {
     val map = hashMapOf<String,Any>(
         "bookTitle" to bookTitle ,

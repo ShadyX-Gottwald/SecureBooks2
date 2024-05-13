@@ -32,7 +32,7 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityProfileBinding
     private val viewmodel by lazy{ ProfileViewModel(auth,firestore ,storageReference) }
-    private val PICK_IMAGE_REQUEST = 71
+    private val PICK_IMAGE_REQUEST = 71 //Land ofCoding (2024)
     private var filePath: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -96,7 +96,7 @@ class ProfileActivity : AppCompatActivity() {
 
             //Get Image , Set to View.
             filePath = data.data!!
-            //binding.setImageURI(filePath)
+            //binding.setImageURI(filePath) //CodingSTUFF (2024)
             binding.imageView.setImageURI(filePath)
         }
     }

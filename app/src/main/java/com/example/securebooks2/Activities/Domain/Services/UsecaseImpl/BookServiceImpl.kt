@@ -13,6 +13,7 @@ import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.storage.StorageReference
 
 class BookServiceImpl(
+    //(CodingSTUFF ,2024)
     private var auth: FirebaseAuth,
     private val firestore: FirebaseFirestore,
     private val storage: StorageReference
@@ -20,11 +21,11 @@ class BookServiceImpl(
 
     override fun addBook(book: Book): Task<DocumentReference> {
        return  firestore.collection(FirebaseConstants.BOOK_COLLECTION)
-            .add(book.toMap())
+            .add(book.toMap())//(CodingSTUFF ,2024)
     }
 
     override fun getAllUserBooks(): Task<QuerySnapshot> {
-        val user = auth.currentUser!!.uid
+        val user = auth.currentUser!!.uid // //(CodingSTUFF ,2024)
         return firestore.collection(FirebaseConstants.BOOK_COLLECTION)
             .where(Filter.equalTo("userId", user))
             .get()

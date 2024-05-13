@@ -42,10 +42,10 @@ class MyCollectionActivity : AppCompatActivity() {
     private fun setDataToRecView(categories: MutableList<Category>?) {
         _adapter = CategoryAdapter(categories,auth,firestore)
         bind.recView.adapter = _adapter
-        bind.recView.setHasFixedSize(false)
+        bind.recView.setHasFixedSize(false) //Land of coding(2024)
 
 
-        _adapter.setOnClickListener(object : CategoryAdapter.OnClickListener{
+        _adapter.setOnClickListener(object : CategoryAdapter.OnClickListener{ //Land of coding(2024)
             override fun onClick(position: Int, model: Category) {
                 val intent = Intent(this@MyCollectionActivity, AddBookActivity::class.java)
                 // Passing the data to the next activity

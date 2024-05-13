@@ -28,7 +28,7 @@ class NewCollectionActivity : AppCompatActivity() {
     private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
     private val viewmodel by lazy{NewCollectionViewModel(auth,firestore)}
     private val PICK_IMAGE_REQUEST = 71
-    private lateinit var filePath: Uri
+    private lateinit var filePath: Uri //CodingSTUFF (2024)
     private var storageReference: StorageReference? = FirebaseStorage.getInstance().reference
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -68,6 +68,12 @@ class NewCollectionActivity : AppCompatActivity() {
                         }
 
                         viewmodel.createCategory(categoryObj, filePath)
+                        //navigate to profile page
+                        val intent = Intent(this, ProfileActivity::class.java)
+                        // Passing the data to the next activity
+
+                        startActivity(intent)
+
                     }
                 }
 

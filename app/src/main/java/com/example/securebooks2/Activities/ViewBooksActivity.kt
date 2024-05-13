@@ -15,12 +15,47 @@ import com.example.securebooks2.databinding.ActivityViewBooksBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
+/***
+ * Reference List
+ *
+ *  * Firebase save User data. [online] youtube(Land of Coding).
+ *  *  Available at:
+ *  hhttps://www.youtube.com/watch?v=50uBQKWpDJk&list=PLzZEuVaFb9ExqUwxMoXg0Li0wYW2IeAkz&index=8
+ *  [Accessed 10 May. 2024].
+ *  *
+ * * Firebase Upload Image Firestore. [online] youtube (Land of Coding).
+ *  *  *  Available at:
+ *  *  hhttps://https://www.youtube.com/watch?v=xk1BKoJ8Nk4&list=PLzZEuVaFb9ExqUwxMoXg0Li0wYW2IeAkz&index=15
+ *  *  [Accessed 11 May. 2024].
+ *
+ *  * Upload and Retrieve Images ( Firebase Storage And URL to Cloud Firestore ). [online] youtube (CodingSTUFF).
+ *  *  *  *  Available at: https://www.youtube.com/watch?v=toKt3LnsBWE&t=1458s
+ *  *  *
+ *  *  *  [Accessed 11 May. 2024].
+ *
+ *
+ *   * To-Do App in Kotlin ( Firebase ) - Part 4. [online] youtube (CodingSTUFF).
+ *  *  *  *  *  Available at:
+ *  https://www.youtube.com/watch?v=KbdEiAlFfz4&list=RDCMUC5hwBZynOhshCbqTGGeoRSA&index=4
+ *  *  *  *
+ *  *  *  *  [Accessed 05 May. 2024].
+ *
+ * *   * To-Do App in Kotlin ( Firebase ) - Part 3. [online] youtube (CodingSTUFF).
+ *  *  *  *  *  *  Available at:
+ *  *  https:https://www.youtube.com/watch?v=lDQlf_qawFE&list=RDCMUC5hwBZynOhshCbqTGGeoRSA&index=3
+ *  *  *  *  *
+ *  *  *  *  *  [Accessed 05 May. 2024].
+ *  *
+ *
+ * ****/
+
+
 class ViewBooksActivity : AppCompatActivity() {
     private lateinit var binding: ActivityViewBooksBinding
     private lateinit var _adapter: BookAdapter
     private val auth: FirebaseAuth = FirebaseAuth.getInstance()
     private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
-    private val viewModel by lazy{ ViewBooksViewModel(auth,firestore) }
+    private val viewModel by lazy{ ViewBooksViewModel(auth,firestore) }  //Land of coding(2024)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityViewBooksBinding.inflate(layoutInflater)
@@ -30,6 +65,7 @@ class ViewBooksActivity : AppCompatActivity() {
     }
 
     private fun setUpObservers() {
+        //Land of coding(2024)
         viewModel.getBookState.observe(this , Observer {
             when(it){
                 is Resource.Loading -> {
@@ -52,7 +88,7 @@ class ViewBooksActivity : AppCompatActivity() {
 
     private fun setDataToRecView(books: MutableList<Book>) {
         _adapter = BookAdapter(books,auth,firestore)
-        binding.recView.adapter = _adapter
+        binding.recView.adapter = _adapter //Land of coding(2024)
         binding.recView.setHasFixedSize(false)
 
     }

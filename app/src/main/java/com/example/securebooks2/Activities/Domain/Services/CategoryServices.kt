@@ -5,6 +5,7 @@ import com.example.securebooks2.Activities.Models.Category
 import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.QuerySnapshot
 
+//(CodingSTUFF ,2024)
 interface CategoryServices {
 
     fun createCategory(category: Category , imageUrl : String):Boolean

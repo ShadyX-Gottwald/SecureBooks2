@@ -47,6 +47,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun setUpLoginStateObserver() {
+        //Land of coding(2024)
         viewModel.loginState.observe(this, Observer {
             when(it){
                 is Resource.Loading -> {}
@@ -74,6 +75,7 @@ class LoginActivity : AppCompatActivity() {
 
     }
     private fun loginClicked() {
+        //Land of coding(2024)
         val email =  binding.etEmail.text.toString()
         val password = binding.etPassword.text.toString()
         if(email.isNotEmpty() && password.isNotEmpty() ){

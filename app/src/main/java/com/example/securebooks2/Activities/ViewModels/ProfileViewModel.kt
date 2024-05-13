@@ -1,5 +1,6 @@
 package com.example.securebooks2.Activities.ViewModels
 
+import android.annotation.SuppressLint
 import android.net.Uri
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -14,6 +15,7 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 
 class ProfileViewModel(
+    //Land of coding(2024)
     private val auth: FirebaseAuth = FirebaseAuth.getInstance(),
     private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance(),
     private val storage: StorageReference = FirebaseStorage.getInstance().reference,
@@ -32,9 +34,12 @@ class ProfileViewModel(
         this.value = Resource.Unspecified()
     }
 
+    //Land of coding(2024)
+    @SuppressLint("SuspiciousIndentation")
     fun getUserProfile() {
         try{
             // Get User Profile, Empty Default Values.
+            //Land of coding(2024)
           val res =   _service.getUserProfileDetails()  .addOnSuccessListener {
               if(it.isEmpty){
                   user_exists.postValue(Resource.Loading(UserProfile()))

@@ -19,6 +19,7 @@ import java.util.Date
 import java.util.Locale
 
 class CategoryServiceImpl(
+    //CodingSTUFF (2024)
     private var auth: FirebaseAuth,
     private val firestore: FirebaseFirestore,
     private val storage: StorageReference

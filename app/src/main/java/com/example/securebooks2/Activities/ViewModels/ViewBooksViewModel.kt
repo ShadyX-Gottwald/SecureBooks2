@@ -15,6 +15,7 @@ import com.google.firebase.storage.StorageReference
 
 private val  TAG =  "Viewbooks VM "
 class ViewBooksViewModel(
+    //Land of coding(2024)
     private val auth: FirebaseAuth = FirebaseAuth.getInstance(),
     private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance(),
     private val storage: StorageReference = FirebaseStorage.getInstance().reference,
@@ -34,6 +35,7 @@ class ViewBooksViewModel(
         try{
             getBookState.postValue(Resource.Loading(mutableListOf()))
             //Get Book from service Logic
+            //Land of coding(2024)
           val result =   _service.getAllUserBooks()
             result.addOnSuccessListener {
                 val books = it.toObjects(Book::class.java)

@@ -1,5 +1,6 @@
 package com.example.securebooks2.Activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -65,6 +66,7 @@ class AddBookActivity : AppCompatActivity() {
     }
 
     fun setUpClickListeners() {
+        //Land of coding(2024)
         binding.saveBtn.setOnClickListener{
 
             //Capture info
@@ -93,6 +95,10 @@ class AddBookActivity : AppCompatActivity() {
                 _viewModel.addBook(bookObj)
                 //Clear Fields after Saving
                 clearFields()
+                val intent = Intent(this, ProfileActivity::class.java)
+                // Passing the data to the next activity
+
+                startActivity(intent)
 
 
             }else {
@@ -100,7 +106,6 @@ class AddBookActivity : AppCompatActivity() {
                     "Please Enter All Fields.", Toast.LENGTH_SHORT).show()
 
             }
-
 
         }
     }

@@ -11,6 +11,24 @@ import com.example.securebooks2.R
 import com.example.securebooks2.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 
+
+/***
+ * Reference List
+ *
+ *  * Firebase save User data. [online] youtube(Land of Coding).
+ *  *  Available at:
+ *  hhttps://www.youtube.com/watch?v=50uBQKWpDJk&list=PLzZEuVaFb9ExqUwxMoXg0Li0wYW2IeAkz&index=8
+ *  [Accessed 10 May. 2024].
+ *  *
+ * * Firebase Upload Image Firestore. [online] youtube (Land of Coding).
+ *  *  *  Available at:
+ *  *  hhttps://https://www.youtube.com/watch?v=xk1BKoJ8Nk4&list=PLzZEuVaFb9ExqUwxMoXg0Li0wYW2IeAkz&index=15
+ *  *  [Accessed 11 May. 2024].
+ *
+ *
+ *
+ * ****/
+
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private  var auth: FirebaseAuth = FirebaseAuth.getInstance()
@@ -26,6 +44,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun setupRegisterStateObserver() {
 
+        //Land of coding(2024)
         viewModel.registerState.observe(this , Observer {
             when(it) {
                 is Resource.Loading -> {
@@ -68,7 +87,7 @@ class RegisterActivity : AppCompatActivity() {
 
             //Register process
             val person = RegisterModel(email,pass ,confirm_pass)
-           val result =  viewModel.registerUser(person)
+           val result =  viewModel.registerUser(person)  //Land of coding(2024)
 
 
         }
