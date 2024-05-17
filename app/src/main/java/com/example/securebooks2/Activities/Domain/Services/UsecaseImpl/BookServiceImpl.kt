@@ -30,6 +30,22 @@ class BookServiceImpl(
             .where(Filter.equalTo("userId", user))
             .get()
     }
+
+    override fun getUserBooksByCategory(category: String): Task<QuerySnapshot> {
+        val user = auth.currentUser!!.uid // //(CodingSTUFF ,2024)
+        return firestore.collection(FirebaseConstants.BOOK_COLLECTION)
+            .where(Filter.equalTo("userId", user))
+            .where(Filter.equalTo("category" , category))
+            .get()
+    }
+
+    override fun getUserBooksCountByCategory(category: String): Task<QuerySnapshot> {
+        val user = auth.currentUser!!.uid // //(CodingSTUFF ,2024)
+        return firestore.collection(FirebaseConstants.BOOK_COLLECTION)
+            .where(Filter.equalTo("userId", user))
+            .where(Filter.equalTo("category" , category))
+            .get()
+    }
 }
 
 

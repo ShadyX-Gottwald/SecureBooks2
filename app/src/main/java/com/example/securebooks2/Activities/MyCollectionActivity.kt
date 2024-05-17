@@ -47,11 +47,12 @@ class MyCollectionActivity : AppCompatActivity() {
 
         _adapter.setOnClickListener(object : CategoryAdapter.OnClickListener{ //Land of coding(2024)
             override fun onClick(position: Int, model: Category) {
-                val intent = Intent(this@MyCollectionActivity, AddBookActivity::class.java)
+                val intent = Intent(this@MyCollectionActivity, CategoryBooksActivity::class.java)
                 // Passing the data to the next activity
 
                 intent.putExtra(CATEGORY, categories?.get(position)?.categoryTitle)
                intent.putExtra(IMAGE_URL, categories?.get(position)?.imageUrl)
+                intent.putExtra(CATEGORY_TARGET_NUM, categories?.get(position)?.categoryTargetNum.toString())
 
                 startActivity(intent)
             }
@@ -61,6 +62,8 @@ class MyCollectionActivity : AppCompatActivity() {
     companion object{
         const val CATEGORY = "category"
         const val IMAGE_URL = "imageUrl"
+        const val CATEGORY_TARGET_NUM = "categoryTargetNum"
+
     }
 
     private fun setUpGetCategoryObservers() {
@@ -77,8 +80,6 @@ class MyCollectionActivity : AppCompatActivity() {
                 is Resource.Success -> {
                     Toast.makeText(this,"Success Getting Data"
                         , Toast.LENGTH_SHORT).show()
-
-
 
                     setDataToRecView(it.data)
 

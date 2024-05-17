@@ -10,4 +10,8 @@ interface BookServices {
     fun addBook(book: Book): Task<DocumentReference>
 
     fun getAllUserBooks(): Task<QuerySnapshot>
+
+    fun getUserBooksByCategory(category: String): Task<QuerySnapshot>
+
+    fun getUserBooksCountByCategory(category: String): Task<QuerySnapshot>
 }

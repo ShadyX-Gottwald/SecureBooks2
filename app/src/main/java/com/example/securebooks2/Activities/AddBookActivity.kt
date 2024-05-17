@@ -22,6 +22,7 @@ class AddBookActivity : AppCompatActivity() {
     private val _viewModel by lazy{ AddBookViewModel(auth,firestore) }
     private var Category =""
     private var ImageUrl = ""
+    private var TargetNum = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddBookBinding.inflate(layoutInflater)
@@ -31,17 +32,18 @@ class AddBookActivity : AppCompatActivity() {
 
         var bundle : Bundle? = intent.extras
 
-        //Getting Data sent From previous Activity
+//        //Getting Data sent From previous Activity
         val category = bundle!!.getString(MyCollectionActivity.CATEGORY)
         Category = category!!
-
-        //Get url For Image
-        val imageUrl = bundle.getString(MyCollectionActivity.IMAGE_URL)
+//
+//        //Get url For Image
+        val imageUrl = bundle!!.getString(MyCollectionActivity.IMAGE_URL)
         ImageUrl = imageUrl!!
 
+        val num = bundle!!.getString(MyCollectionActivity.CATEGORY_TARGET_NUM)
         binding.tvCategory.text = category
 
-        Toast.makeText(this, ImageUrl , Toast.LENGTH_LONG).show()
+        Toast.makeText(this, imageUrl , Toast.LENGTH_LONG).show()
 
     }
 
