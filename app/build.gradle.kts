@@ -44,10 +44,10 @@ android {
 }
 
 dependencies {
-    //Glide Lib Dependency
+    //Glide Lib Dependency image loader
     implementation ("com.github.bumptech.glide:glide:4.13.0")
 
-    implementation("androidx.fragment:fragment-ktx:1.6.2")
+    implementation("androidx.fragment:fragment-ktx:1.7.0")
     implementation("com.google.firebase:firebase-auth:23.0.0")
     implementation("com.google.firebase:firebase-database-ktx:21.0.0")
     implementation("com.google.firebase:firebase-database-ktx:21.0.0")
